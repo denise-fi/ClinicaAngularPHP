@@ -1,0 +1,28 @@
+<nb-layout>
+    <nb-layout-header>
+        {{title}}
+    </nb-layout-header>
+    <nb-layout-footer></nb-layout-footer>
+    <nb-layout-column>
+     <router-outlet></router-outlet>
+    </nb-layout-column>
+    <nb-sidebar>
+      <nb-card style="padding:0% 10% 10% 10%;">
+          <menuComponent></menuComponent>
+      </nb-card>
+    </nb-sidebar>
+</nb-layout>
+
+   <!--
+<h1>pepe</h1>
+<a class="nav-link icon-bor text-s1 pb-1 pt-1" [routerLink]="['/home']" [routerLinkActive]="['active']">
+    Home
+  </a><br>
+  <a class="nav-link icon-bor text-s1 pb-1 pt-1" [routerLink]="['/login']" [routerLinkActive]="['active']">
+    Login
+  </a><br>
+  <a class="nav-link icon-bor text-s1 pb-1 pt-1" [routerLink]="['/registro']" [routerLinkActive]="['active']">
+    Registro
+  </a><br>-->
+
+

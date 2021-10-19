@@ -1,0 +1,80 @@
+<nb-card style="padding: 2%;">
+    <form novalidate #forma="ngForm" class="container-fluid" accent="danger" size="tiny" [nbSpinner]="loading"
+    nbSpinnerStatus="primary"
+    nbSpinnerSize="large"
+    nbSpinnerMessage="">
+    <div class="row">
+      <div class="col-sm-12 col-lg-12 mt1" >
+        <nb-card-body class="example-items-rows">
+          <label for="nombre">Nombre : &nbsp;</label>
+          <input type="text" id="nombre" #nm="ngModel" name="nombre" required
+          minlength="3" [(ngModel)]="nombre" nbInput placeholder="Nombre"
+        />
+        <span *ngIf="nm.touched && !nm.valid" class="text-danger">El nombre es obligatorio</span>
+        <label for="apellido">Apellido</label>
+        <input
+          type="text"
+          nbInput
+          placeholder="Apellido"
+          id="apellido" #ap="ngModel" name="apellido" required
+          minlength="3" [(ngModel)]="apellido"
+      />
+      <span *ngIf="ap.touched && !ap.valid" class="text-danger">El apellido es
+        obligatorio</span>
+    </nb-card-body>
+      </div>
+
+
+      <div class="col-sm-12 col-lg-12 mt1">
+        <nb-card-body class="example-items-rows">
+          <label for="correo">Email : &nbsp;</label>
+          <input type="email" name="correo" nbInput placeholder="correo@corre.cl"
+          id="correo" #cor="ngModel" required
+          minlength="3" [(ngModel)]="correo"
+        />
+        <span *ngIf="cor.touched && !cor.valid" class="text-danger">El correo es
+          obligatorio</span>
+        <label for="numero">Numero : &nbsp;</label>
+        <input
+        type="tel"
+        name="numero"
+        nbInput
+        placeholder="+569 99922211"
+        id="numero" #num="ngModel" name="numero" required
+        minlength="3" [(ngModel)]="numero"
+    />
+    <span *ngIf="num.touched && !num.valid" class="text-danger">El numero es
+      obligatorio</span>
+      </nb-card-body>
+      </div>
+
+  
+
+      <div class="col-sm-12 col-lg-12 mt1">
+        <nb-card-body class="example-items-rows">
+          <label for="clave1">Clave : &nbsp;</label>
+          <input type="password" name="clave1" nbInput placeholder="*****"
+          id="clave1" #cl1="ngModel"  required
+          minlength="3" [(ngModel)]="clave1"
+        />
+        <span *ngIf="cl1.touched && !cl1.valid" class="text-danger">La clave es
+          obligatorio</span>
+        <label for="clave2">Repetir Clave : &nbsp;</label>
+        <input
+          type="password"
+          nbInput
+          name="clave2"
+          placeholder="****"
+          id="clave2" #cl2="ngModel" required
+          minlength="3" [(ngModel)]="clave2"
+        />
+        <span *ngIf="cl2.touched && !cl2.valid" class="text-danger">Repetir clave es
+          obligatorio y debe ser identico a clave</span>
+      </nb-card-body>
+      </div>
+      <button nbButton [disabled]="!forma.valid" (click)="RegistroUser()">Registrar</button>
+      
+    </div>
+  </form>
+  </nb-card>
+
